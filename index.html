@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My self</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
@@ -14,13 +15,58 @@
     html{
         font-size: 69%;
         overflow-x: hidden;
+        cursor: none; 
         
     }
-    body{
-        background: black;
-        color: white;
-  
+    body {
+    background: black;
+    color: white;
+    animation: fadeIn 1.5s ease-out forwards;
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(-20px); /* Optional: initial position for a slight move effect */
+    justify-content: center;
+}
+/*custom cursor*/
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3,
+                0px 0px 70px #30D9C3;
+                z-index: 10000;
+}
+*, a, button, input, textarea {
+    cursor: none; /* Hide the default cursor on all elements */
+}
+
+body:hover .custom-cursor {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 30px;
+}
+
+/*end custom cursor*/
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* End with opacity 1 */
+        transform: translateY(0); /* Adjust this if you want to move elements */
     }
+}
+
     .header{
         position: fixed;
         top: 0;
@@ -38,7 +84,6 @@
         font-size: 2rem;
         color: white;
         font-weight: 800;
-        cursor: pointer;
         transition: 0.3s ease;
         text-decoration: none;
     }
@@ -115,7 +160,6 @@
         width: 25vw;
         border-radius: 50%;
         box-shadow: 0 0 25px #30D9C3;
-        cursor: pointer;
         transition: 0.4s ease-in-out;
     }
     .home-img img:hover{
@@ -162,7 +206,6 @@
         letter-spacing: 0.1rem;
         font-weight: 600;
         transition: 0.3s ease-in-out;
-        cursor: pointer;
         border:1px solid #30D9C3;
     }
     .btn:hover{
@@ -270,7 +313,6 @@
      }
      .education{
         padding: 100px 15px;
-        
      }
      .education h2{
         margin-bottom: 5rem;
@@ -282,6 +324,7 @@
         flex-wrap: wrap;
         position: relative;
      }
+     
      .timeline-items::before{
         content: "";
         position: absolute;
@@ -328,13 +371,13 @@
         padding: 30px 50px;
         background-repeat: 4rem;
         box-shadow: 0 0 10px #30D9C3;
-        cursor: pointer;
         transition: 0.3s ease-in-out;
      }
      .timeline-content:hover{
         transform: scale(1.05);
         box-shadow: 0px 0px 250px #30D9C3;
         background: #000000;
+        background-image: url(picture/222.jpeg);
      }
      .timeline-content h3{
         font-size: 20px;
@@ -348,6 +391,7 @@
         font-weight: 300;
         line-height: 22px;
      }
+
      /*scrollbar */
      ::-webkit-scrollbar{
         width: 15px;
@@ -388,64 +432,166 @@
  /*end scrollbar for service-box*/
 /*page two end */
 /*page three start*/
-    .service{
-        background:#30D9C3;
-        color: #000000;
-    }
-    .service h2{
-        margin-bottom: 5rem;
-        color: white;
-    }
-    .services-container{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        align-items: center;
-        gap:2.5rem;
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto; 
-        
-    }
-    .service-box{
-        background-color: #30D9C3;
-        height: auto;
-        border-radius: 3rem;
-        border: 5px solid transparent;
-        cursor: pointer;
-        transition: 0.4s ease-in-out;
-        box-sizing: border-box;
-            word-wrap: break-word;
-            overflow: auto;
-    }
-    .service-box:hover{
-        background: white;
-        color: #000000;
-        border: 5px solid #30D9C3;
-        transform: scale(1.03);
-    }
-    .service-box .service-info{
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        max-height: 900px;
-        justify-content: left;
-        align-items: baseline;
-        padding: 6rem 5rem;
-        
-    }
-    .service-info h4{
-        font-size: 3rem;
-        font-weight: 800;
-        line-height: 2;
-    }
-    .service-info p{
-        font-size: 1.6rem;
-        font-weight: 600;
-        max-height: 100px;
-        line-height: 1.7;
-        margin: auto;
-    }
+/* Box Background Images */
+#Box1 {
+    background-image: url('picture/Web designer.jpeg');
+}
+#Box2 {
+    background-image: url('picture/UI UX.jpeg');
+}
+#Box3 {
+    background-image: url('picture/Full Stack Development.jpeg');
+}
+#Box4 {
+    background-image: url('picture/content creator.jpeg');
+}
+#Box5 {
+    background-image: url('picture/astronomy.jpeg');
+}
 
+.service {
+    background: #30D9C3;
+    color: #000000;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.service-box {
+    position: relative;
+    background-size: cover;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px;
+    border-radius: 20px;
+    border:1px solid #30D9C3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Add the dark overlay */
+.service-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    z-index: 1; /* Place the overlay behind the text but above the background image */
+    transition: transform 0.4s ease-in-out;
+    border-radius: inherit;
+}
+
+/* Apply the background image with zoom effect */
+.service-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0; /* Place the image behind the overlay */
+    transition: transform 0.4s ease-in-out;
+    border-radius: inherit;
+    background-image: inherit;
+}
+
+.service-box:hover::after {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+
+.service-info {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay and image */
+    padding: 1rem;
+    color: white;
+    text-align: left;
+}
+
+.service-info h4 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.service-info p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+}
+/*extra portfolio start*/
+/*page three start*/
+/* Box Background Images */
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.card{
+    width: 320px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #30D9C3;
+    box-shadow: 0 0 10px #30D9C3,
+                    0 0 20px #30D9C3;   
+}
+#card-img2{
+    width: 320px;
+    height: 420px;
+}
+.card-body{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right:0;
+    position: absolute;
+    background: #0000008a;
+    color: white;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    right: -100%;
+    transition: 2s;
+
+}
+.card-btn{
+    background: #30D9C3 ;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: -10px;
+}
+.card:hover .card-body{
+    right: 0;
+    
+
+
+}
+
+/*extra portfolio end*/
 /*page three end*/
 /*page four start*/
      .help{
@@ -483,7 +629,6 @@
         border-radius: 2rem;
         margin: 0 2rem;
         padding: 30px 60px;
-        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -729,6 +874,7 @@
 
 </style>
 <body>
+    <div class="custom-cursor"></div>
     <header class="header">
         <a href="#" class="logo">Vijayan <span>Gobiharan</span></a>
         
@@ -737,6 +883,7 @@
             <a href="#index" class="active">Home</a>
             <a href="#education">Education</a>
             <a href="#services">Service</a>
+            <a href="#portfolio">portfolio</a>
             <a href="#help">Testimonials</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -751,10 +898,10 @@
                     <a href="https://x.com/GobiGob33857524?t=smz-1YgDyzfhDfCnVl_IPw&s=09"><i class="fa-brands fa-twitter"></i></a>
                     <a href="https://www.instagram.com/gobi__71__?igsh=MmVoMXZkMG1lbWxp"><i class="fa-brands fa-instagram"></i></box-icon></a>
                     <a href="https://www.facebook.com/share/dzi9U1H3ZA9BL4NC/?mibextid=qi2Omg"><i class="fa-brands fa-facebook"></i></box-icon></a>
-                    <a href=""><i class="fa-brands fa-github"></i></box-icon></a>
+                    <a href="https://github.com/Gobiharan1"><i class="fa-brands fa-github"></i></box-icon></a>
                     <a href="https://www.linkedin.com/in/gobiharan-vijayan-7242b926b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></box-icon></a>
                     <a href="https://pin.it/76E4kZMkR"><i class="fa-brands fa-pinterest"></i></a>
-                    <a href="https://www.tiktok.com/@gobiharan5641?is_from_webapp=1&sender_device=pc"><i class="fa-brands fa-tiktok"></i></a>
+ 
                 </div>
                 <div class="btn-group">
                     <a href="cv.html" class="btn">My CV</a>
@@ -834,16 +981,15 @@
 
         <div class="services-container">
             <!--Box one-->
-            <div class="service-box">
+            <div class="service-box" id="Box1">
                 <div class="service-info">
                     <h4>Web designer</h4>
-                    <p>As a passionate web designer, I excel in crafting visually stunning and uniquely designed websites that captivate and engage users. My expertise lies in transforming creative ideas into beautiful, functional digital experiences. With a keen eye for detail and a strong understanding of modern design principles, I create custom web solutions that are not only aesthetically pleasing but also user-friendly and optimized for performance. Whether it’s a sleek corporate site or a vibrant, interactive platform, I strive to deliver designs that stand out and leave a lasting impression.</p>
-                </div>
+                    <p>As a web designer, I specialize in creating visually striking, user-friendly websites that turn ideas into engaging digital experiences. My designs are detail-oriented, modern, and optimized for performance, ensuring each site is both beautiful and functional. Whether it's a corporate site or an interactive platform, I aim to deliver work that stands out and leaves a lasting impression.</div>
             </div>
              <!--Box one end-->
 
              <!--Box two start-->
-            <div class="service-box">
+            <div class="service-box" id="Box2">
                 <div class="service-info">
                     <h4>UI / UX designer</h4>
                     <p> I blend creativity with functionality to craft stunning and intuitive interfaces. My designs focus on creating seamless, enjoyable user experiences that are both visually appealing and highly effective. I strive to deliver interfaces that captivate users and enhance their interactions, ensuring every design element serves a purpose and contributes to a cohesive, delightful experience.</p>
@@ -853,7 +999,7 @@
              <!--Box two end-->
 
                 <!--Box three start-->
-            <div class="service-box">
+            <div class="service-box" id="Box3">
                 <div class="service-info">
                     <h4>Full stack devolper</h4>
                     <p>As a Full Stack Developer, I bring expertise in both front-end and back-end technologies to build dynamic, scalable web applications. With a comprehensive skill set spanning from user interface design to server-side development, I excel in creating cohesive and efficient solutions. My approach focuses on integrating cutting-edge technologies and best practices to deliver robust, high-performance applications that meet diverse client needs and drive innovation.</p>
@@ -864,7 +1010,7 @@
 
 
                 <!--Box four start-->
-            <div class="service-box">
+            <div class="service-box" id="Box4">
                 <div class="service-info">
                     <h4>Content creator</h4>
                     <p>As a content creator, I craft engaging and impactful content that captivates audiences and drives meaningful interactions. My expertise spans various media, including written articles, videos, and social media posts, all designed to inform, entertain, and inspire. With a keen eye for detail and a strong understanding of audience preferences, I produce compelling narratives and visuals that resonate and leave a lasting impression.
@@ -876,7 +1022,7 @@
              <!--Box four end-->
 
                 <!--Box five start-->
-            <div class="service-box">
+            <div class="service-box" id="Box5">
                 <div class="service-info">
                     <h4>Astronomy researcher </h4>
                     <p>As an astronomy researcher, I delve into the mysteries of the universe to uncover insights about celestial phenomena and cosmic events. With a deep passion for understanding the cosmos, I utilize advanced observational tools and analytical techniques to explore and interpret astronomical data. My research aims to contribute to the broader knowledge of space, enhance our comprehension of the universe's fundamental processes, and inspire curiosity about the vast expanse beyond our world.</p>
@@ -884,13 +1030,39 @@
                 </div>
             </div>
              <!--Box five end-->
-
-
         </div>
      </section>
      <!--Thired page end-->
+    <!--forth page start-->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">portfolio</h2>
+        <div class="card-container">
+            <!--card1-->
+        <div class="card">
+          <img src="picture/Breezy bite bakery 123.jpg.png" alt="" class="img-card">
+           <div class="card-body">
+            <h4>website</h4>
+            <p>I recently designed a fully responsive website for a bakery, focusing on a warm and inviting layout that adapts seamlessly to any device. The design highlights the bakery's offerings with vibrant images, intuitive navigation, and a cohesive color scheme that reflects the brand's identity. The goal was to create an engaging online presence that appeals to customers and showcases the bakery’s delicious products.</p>
+            <button class="card-btn">check</button>
+        </div>
+        </div>
+        <!--card1 end-->
 
-     <!--forth page start-->
+          <!--card3-->
+        <div class="card" id="">
+            <img src="picture/figma.jpg" alt="" class="img-card">
+             <div class="card-body">
+              <h4>Figma design</h4>
+              <p>I recently designed a clean and user-friendly website using Figma, focusing on a modern aesthetic with a responsive layout. The design includes a harmonious color palette, intuitive navigation, and engaging visual elements like custom icons and smooth hover effects. It’s tailored to provide a seamless experience across all devices, ensuring both functionality and style are at the forefront.</p>
+              <button class="card-btn">check</button>
+          </div>
+          </div>
+          <!--card3 end-->
+
+
+    </div>
+    </section>
+     <!--fifth page start-->
       <section class="help" id="help">
         <div class="help-box">
             <h2 class="heading">Testimonials</h2>
@@ -934,8 +1106,8 @@
             </div>
         </div>
       </section>
-     <!--forth page end-->
-     <!--fifth page start-->
+     <!--fifth page end-->
+     <!--sixth page start-->
      
      <section class="contact" id="contact">
         <h2 class="heading">contact <span>Me</span></h2>
@@ -986,10 +1158,10 @@
             </li>
         </ul>
         <p class="copyright">
-            Gobiharan vijayan | All Rights Reserved
+            Gobiharan vijayan |&copy; All Rights Reserved
         </p>
      </footer>
-     <!--fifth page end-->
+     <!--sixth page end-->
     <script src="js/bootstrap.js"></script>
     <script>
    let menuIcon = document.querySelector('#menu-icon');
@@ -1028,5 +1200,39 @@ menuIcon.onclick = () => {
 // console.log('NavLinks:', navLinks);
 
 </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function handleScroll() {
+                const timelineItems = document.querySelector('.timeline-items');
+                if (isElementInViewport(timelineItems)) {
+                    timelineItems.style.animation = 'slideInFromLeft 2s ease-out forwards';
+                    window.removeEventListener('scroll', handleScroll);
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+
+<script>
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
+</script>
+
 </body>
 </html>
